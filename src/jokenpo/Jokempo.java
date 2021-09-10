@@ -7,113 +7,308 @@ public class Jokempo {
 
 	public static void main(String[] args) {
 
-		int jog, numc, contpc = 0, contpl = 0;
-		int cont = 0;
-		String num = " ", nump = " ";
+		int jogador = 0, computador, placarJogador = 0, placarComputador = 0;
+		int partidasjogadas = 0, contadorDePartidas1 = 1, contadorDePartidas2 = 0, contador4 = 0, contador3 = 0, partidas2 = 0;
+		int partidas = 0, resetarjogo = 0, resetarjogo2 = 0;
+		String EscolhaEscritaComputador = " ", EscolhaEscritaJogador = " ", jogarnovamente = " ";
 
 		Scanner leitor = new Scanner(System.in);
 		System.out.println("");
 		System.out.println("******** Jokempo ********");
-		
-		while (cont != 3) {
-			System.out.println("");
-			System.out.println("******** Escolha ********");
-			System.out.println("");
-			System.out.println("1 - pedra");
-			System.out.println("2 - papel");
-			System.out.println("3 - tesoura");
-			System.out.println("");
-			System.out.print("digite sua escolha:");
-			jog = leitor.nextInt();
-			System.out.println("");
+		System.out.println("");
 
-			Random com = new Random();
-			numc = com.nextInt(3) + 1;
+		while (resetarjogo == 0) {
+			while (contadorDePartidas2 == 0) {
 
-			if (numc == 1) {
+				System.out.print("Quantas partidas você deseja jogar?(ímpar e igual ou maior que 3)");
+				partidas = leitor.nextInt();
+				System.out.println("");
 
-				num = " Pedra";
+				if (partidas % 2 == 0 || partidas < 3) {
 
-			} else if (numc == 2) {
+					System.out.println("Escolha um número de partidas que seja ímpar e maior ou igual a 3");
+				} else {
+					contadorDePartidas2++;
+				}
 
-				num = " Papel";
+				partidas2 = partidas;
 
-			} else if (numc == 3) {
+			}
 
-				num = " Tesoura";
+			while (partidasjogadas < partidas) {
+
+				System.out.println("Partida:" + contadorDePartidas1);
+				System.out.println("");
+				System.out.println("1 - pedra");
+				System.out.println("2 - papel");
+				System.out.println("3 - tesoura");
+				System.out.println("");
+				System.out.print("digite sua escolha:");
+				
+				while (contador4 == 0) {
+					
+					jogador = leitor.nextInt();
+					
+					if (jogador == 1 || jogador == 2 || jogador == 3) {
+
+						contador4++;
+
+					} else {
+
+						System.out.println("Digite 1, 2 ou 3!");
+
+					}
+				}
+
+				Random com = new Random();
+				computador = com.nextInt(3) + 1;
+
+				if (computador == 1) {
+
+					EscolhaEscritaComputador = " Pedra";
+
+				} else if (computador == 2) {
+
+					EscolhaEscritaComputador = " Papel";
+
+				} else if (computador == 3) {
+
+					EscolhaEscritaComputador = " Tesoura";
+
+				} else {
+
+					System.out.println("erro");
+
+				}
+
+				if (jogador == 1) {
+
+					EscolhaEscritaJogador = " Pedra";
+
+				} else if (jogador == 2) {
+
+					EscolhaEscritaJogador = " Papel";
+
+				} else if (jogador == 3) {
+
+					EscolhaEscritaJogador = " Tesoura";
+
+				}
+
+				if (computador == 1 && jogador == 2 || computador == 2 && jogador == 3 || computador == 3 && jogador == 1) {
+
+					System.out.println("");
+					System.out.println("O jogador escolheu" + EscolhaEscritaJogador);
+					System.out.println("O computador escolheu" + EscolhaEscritaComputador);
+					System.out.println("");
+					System.out.println("******* YOU WIN ********");
+					System.out.println("");
+					placarJogador++;
+					partidasjogadas++;
+					contadorDePartidas1++;
+					System.out.println("Jogador = " + placarJogador);
+					System.out.println("Computador = " + placarComputador);
+					System.out.println("");
+
+				} else if (computador == jogador) {
+
+					System.out.println("");
+					System.out.println("O jogador escolheu" + EscolhaEscritaJogador);
+					System.out.println("O computador escolheu" + EscolhaEscritaComputador);
+					System.out.println("");
+					System.out.println("******** Empate ********");
+					partidas2 = partidas2 - 1;
+					System.out.println("");
+					partidasjogadas++;
+					contadorDePartidas1++;
+					System.out.println("Jogador = " + placarJogador);
+					System.out.println("Computador = " + placarComputador);
+					System.out.println("");
+
+				} else if (jogador == 1 && computador == 2 || jogador == 2 && computador == 3 || jogador == 3 && computador == 1) {
+
+					System.out.println("");
+					System.out.println("O jogador escolheu" + EscolhaEscritaJogador);
+					System.out.println("O computador escolheu" + EscolhaEscritaComputador);
+					System.out.println("");
+					System.out.println("****** GAME OVER *******");
+					System.out.println("");
+					partidasjogadas++;
+					contadorDePartidas1++;
+					placarComputador++;
+					System.out.println("Jogador = " + placarJogador);
+					System.out.println("Computador = " + placarComputador);
+					System.out.println("");
+
+				} else {
+
+					System.out.println("Insira um valor valido!");
+
+				}
+				if (placarJogador > partidas2 / 2) {
+					partidasjogadas = partidas;
+					System.out.println("O jogador venceu pois não é mais possivel que o computador o alcance!!");
+					System.out.println("PLACAR FINAL");
+					System.out.println("Jogador = " + placarJogador);
+					System.out.println("Computador = " + placarComputador);
+				} else if (placarComputador > partidas2 / 2) {
+					partidasjogadas = partidas;
+					System.out.println("O Computador venceu pois não é mais possivel que o jogador o alcance!!");
+					System.out.println("PLACAR FINAL");
+					System.out.println("Jogador = " + placarJogador);
+					System.out.println("Computador = " + placarComputador);
+				} else {
+
+				}
+
+				if (partidas == partidasjogadas && placarJogador == placarComputador) {
+
+					while (contador3 == 0) {
+
+						System.out.println(
+								"ESTAMOS NA ULTIMA DAS BATALHAS, TODOS OS JOGOS ANTERIORES RESULTARAM EM UM GRANDE EMPATE!!");
+						System.out.println("JOJADOR ESCOLHA SUA ARMA FINAL!!!!!!");
+						System.out.println("1 - pedra");
+						System.out.println("2 - papel");
+						System.out.println("3 - tesoura");
+						System.out.println("");
+						System.out.print("digite sua escolha:");
+						jogador = leitor.nextInt();
+						contador4 = 0;
+						while (contador4 == 0) {
+
+							if (jogador == 1 || jogador == 2 || jogador == 3) {
+
+								contador4++;
+
+							} else {
+
+								System.out.println("Digite 1, 2 ou 3!");
+
+							}
+						}
+						System.out.println("");
+
+						computador = com.nextInt(3) + 1;
+
+						if (computador == 1) {
+
+							EscolhaEscritaComputador = " Pedra";
+
+						} else if (computador == 2) {
+
+							EscolhaEscritaComputador = " Papel";
+
+						} else if (computador == 3) {
+
+							EscolhaEscritaComputador = " Tesoura";
+
+						} else {
+
+							System.out.println("erro");
+
+						}
+
+						if (jogador == 1) {
+
+							EscolhaEscritaJogador = " Pedra";
+
+						} else if (jogador == 2) {
+
+							EscolhaEscritaJogador = " Papel";
+
+						} else if (jogador == 3) {
+
+							EscolhaEscritaJogador = " Tesoura";
+
+						}
+
+						if (computador == 1 && jogador == 2 || computador == 2 && jogador == 3 || computador == 3 && jogador == 1) {
+
+							System.out.println("");
+							System.out.println("O jogador escolheu" + EscolhaEscritaJogador);
+							System.out.println("O computador escolheu" + EscolhaEscritaComputador);
+							System.out.println("");
+							System.out.println("O JOGADOR É O GRANEDE VENCEDOR!!!!!");
+							placarJogador++;
+							partidasjogadas++;
+							contadorDePartidas1++;
+							contador3++;
+							System.out.println("Jogador = " + placarJogador);
+							System.out.println("Computador = " + placarComputador);
+
+						} else if (computador == jogador) {
+
+							System.out.println("");
+							System.out.println("O jogador escolheu" + EscolhaEscritaJogador);
+							System.out.println("O computador escolheu" + EscolhaEscritaComputador);
+							System.out.println("");
+							System.out.println("******** Empate ********");
+							System.out.println("Jogador = " + placarJogador);
+							System.out.println("Computador = " + placarComputador);
+
+						} else if (jogador == 1 && computador == 2 || jogador == 2 && computador == 3 || jogador == 3 && computador == 1) {
+
+							System.out.println("");
+							System.out.println("O jogador escolheu" + EscolhaEscritaJogador);
+							System.out.println("O computador escolheu" + EscolhaEscritaComputador);
+							System.out.println("");
+							System.out.println("****** GAME OVER *******");
+							System.out.println("");
+							partidasjogadas++;
+							contadorDePartidas1++;
+							placarComputador++;
+							contador3++;
+							System.out.println("Jogador = " + placarJogador);
+							System.out.println("Computador = " + placarComputador);
+
+						}
+
+					}
+
+				} else {
+
+				}
+
+			}
+			
+			resetarjogo2 = 0;
+			
+			while (resetarjogo2 == 0) {
+				System.out.println("Você deseja jogar novamente?(S/N)");
+				jogarnovamente = leitor.next();
+
+			if (jogarnovamente.equals("S") || jogarnovamente.equals("s")) {
+
+				System.out.println("Novo jogo no caprixo pro ce!");
+				System.out.println("");
+				resetarjogo2++;
+				contadorDePartidas2=0;
+				partidasjogadas= 0;
+				placarJogador = 0;
+				placarComputador=0;
+				partidas2=0;
+				partidas=0;
+				jogador=0;
+				contadorDePartidas1=0;
+				contador4=0;
+				contador3=0;
+				computador=0;
+				
+
+			} else if (jogarnovamente.equals("N") || jogarnovamente.equals("n")) {
+
+				resetarjogo++;
+				resetarjogo2++;
+				System.out.println("Obrigado por jogar :)");
 
 			} else {
 
-				System.out.println("erro");
+				System.out.println("Insira S ou N!");
 
 			}
-
-			if (jog == 1) {
-
-				nump = " Pedra";
-
-			} else if (jog == 2) {
-
-				nump = " Papel";
-
-			} else if (jog == 3) {
-
-				nump = " Tesoura";
-
 			}
-
-			if (numc == 1 && jog == 2 || numc == 2 && jog == 3 || numc == 3 && jog == 1) {
-
-				System.out.println("");
-				System.out.println("O jogador escolheu" + nump);
-				System.out.println("O computador escolheu" + num);
-				System.out.println("");
-				System.out.println("******* YOU WIN ********");
-				contpl++;
-				cont = contpl;
-				System.out.println("__________________");
-				System.out.println("|Placar Jogador " + contpl + "|");
-				System.out.println("|Placar Máquina " + contpc + "|");
-				System.out.println("|________________|");
-				System.out.println("");
-
-			} else if (numc == jog) {
-
-				System.out.println("");
-				System.out.println("O jogador escolheu" + nump);
-				System.out.println("O computador escolheu" + num);
-				System.out.println("");
-				System.out.println("******** Empate ********");
-				System.out.println("__________________");
-				System.out.println("|Placar Jogador " + contpl + "|");
-				System.out.println("|Placar Máquina " + contpc + "|");
-				System.out.println("|________________|");
-				System.out.println("");
-
-			} else if (jog == 1 && numc == 2 || jog == 2 && numc == 3 || jog == 3 && numc == 1) {
-
-				System.out.println("");
-				System.out.println("O jogador escolheu" + nump);
-				System.out.println("O computador escolheu" + num);
-				System.out.println("");
-				System.out.println("****** GAME OVER *******");
-				System.out.println("");
-				contpc++;
-				cont = contpc;
-				System.out.println("__________________");
-				System.out.println("|Placar Jogador " + contpl + "|");
-				System.out.println("|Placar Máquina " + contpc + "|");
-				System.out.println("|________________|");
-				System.out.println("");
-
-			} else {
-
-				System.out.println("Insira um valor valido!");
-
-			}
-
 		}
 		leitor.close();
 	}
-
 }
