@@ -8,7 +8,8 @@ public class Jokempo {
 	public static void main(String[] args) {
 
 		int jogador = 0, computador, placarJogador = 0, placarComputador = 0;
-		int partidasjogadas = 0, contadorDePartidas1 = 1, contadorDePartidas2 = 0, contador4 = 0, contador3 = 0, partidas2 = 0;
+		int partidasjogadas = 0, contadorDePartidas1 = 1, contadorDePartidas2 = 0, contador4 = 0, contador3 = 0,
+				partidas2 = 0;
 		int partidas = 0, resetarjogo = 0, resetarjogo2 = 0;
 		String EscolhaEscritaComputador = " ", EscolhaEscritaJogador = " ", jogarnovamente = " ";
 
@@ -44,11 +45,11 @@ public class Jokempo {
 				System.out.println("3 - tesoura");
 				System.out.println("");
 				System.out.print("digite sua escolha:");
-				
+
 				while (contador4 == 0) {
-					
+
 					jogador = leitor.nextInt();
-					
+
 					if (jogador == 1 || jogador == 2 || jogador == 3) {
 
 						contador4++;
@@ -95,7 +96,8 @@ public class Jokempo {
 
 				}
 
-				if (computador == 1 && jogador == 2 || computador == 2 && jogador == 3 || computador == 3 && jogador == 1) {
+				if (computador == 1 && jogador == 2 || computador == 2 && jogador == 3
+						|| computador == 3 && jogador == 1) {
 
 					System.out.println("");
 					System.out.println("O jogador escolheu" + EscolhaEscritaJogador);
@@ -125,7 +127,8 @@ public class Jokempo {
 					System.out.println("Computador = " + placarComputador);
 					System.out.println("");
 
-				} else if (jogador == 1 && computador == 2 || jogador == 2 && computador == 3 || jogador == 3 && computador == 1) {
+				} else if (jogador == 1 && computador == 2 || jogador == 2 && computador == 3
+						|| jogador == 3 && computador == 1) {
 
 					System.out.println("");
 					System.out.println("O jogador escolheu" + EscolhaEscritaJogador);
@@ -205,7 +208,7 @@ public class Jokempo {
 
 						} else {
 
-							System.out.println("erro");
+							System.out.println("erro!");
 
 						}
 
@@ -223,7 +226,8 @@ public class Jokempo {
 
 						}
 
-						if (computador == 1 && jogador == 2 || computador == 2 && jogador == 3 || computador == 3 && jogador == 1) {
+						if (computador == 1 && jogador == 2 || computador == 2 && jogador == 3
+								|| computador == 3 && jogador == 1) {
 
 							System.out.println("");
 							System.out.println("O jogador escolheu" + EscolhaEscritaJogador);
@@ -247,7 +251,8 @@ public class Jokempo {
 							System.out.println("Jogador = " + placarJogador);
 							System.out.println("Computador = " + placarComputador);
 
-						} else if (jogador == 1 && computador == 2 || jogador == 2 && computador == 3 || jogador == 3 && computador == 1) {
+						} else if (jogador == 1 && computador == 2 || jogador == 2 && computador == 3
+								|| jogador == 3 && computador == 1) {
 
 							System.out.println("");
 							System.out.println("O jogador escolheu" + EscolhaEscritaJogador);
@@ -271,42 +276,41 @@ public class Jokempo {
 				}
 
 			}
-			
+
 			resetarjogo2 = 0;
-			
+
 			while (resetarjogo2 == 0) {
 				System.out.println("Você deseja jogar novamente?(S/N)");
 				jogarnovamente = leitor.next();
 
-			if (jogarnovamente.equals("S") || jogarnovamente.equals("s")) {
+				if (jogarnovamente.equals("S") || jogarnovamente.equals("s")) {
 
-				System.out.println("Novo jogo no caprixo pro ce!");
-				System.out.println("");
-				resetarjogo2++;
-				contadorDePartidas2=0;
-				partidasjogadas= 0;
-				placarJogador = 0;
-				placarComputador=0;
-				partidas2=0;
-				partidas=0;
-				jogador=0;
-				contadorDePartidas1=0;
-				contador4=0;
-				contador3=0;
-				computador=0;
-				
+					System.out.println("Novo jogo no caprixo pro ce!");
+					System.out.println("");
+					resetarjogo2++;
+					contadorDePartidas2 = 0;
+					partidasjogadas = 0;
+					placarJogador = 0;
+					placarComputador = 0;
+					partidas2 = 0;
+					partidas = 0;
+					jogador = 0;
+					contadorDePartidas1 = 0;
+					contador4 = 0;
+					contador3 = 0;
+					computador = 0;
 
-			} else if (jogarnovamente.equals("N") || jogarnovamente.equals("n")) {
+				} else if (jogarnovamente.equals("N") || jogarnovamente.equals("n")) {
 
-				resetarjogo++;
-				resetarjogo2++;
-				System.out.println("Obrigado por jogar :)");
+					resetarjogo++;
+					resetarjogo2++;
+					System.out.println("Obrigado por jogar :)");
 
-			} else {
+				} else {
 
-				System.out.println("Insira S ou N!");
+					System.out.println("Insira S ou N!");
 
-			}
+				}
 			}
 		}
 		leitor.close();
