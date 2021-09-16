@@ -18,7 +18,9 @@ public class Jokempo {
 		System.out.println("******** JOKENPO ********");
 		System.out.println("");
 		System.out.println("Após muito andar, você finalmente chega na lendária arena de batalha...");
-		System.out.println("Você anda até a recepção e ve um homem grande, com um grande bigode e muito musculoso nela, ele se vira até você e grita:");
+		System.out.println("Você anda até a recepção e ve um homem grande, com um grande bigode e muito musculoso, ele se vira até você e grita:");
+		System.out.println("- OLÁ JOVEM, EU SOU O GRANDE NARRADOR DA ARENA!");
+		System.out.println("Essa grande figura te olha de cima a baixo, com um olhar decepicionado, e então ele grita novamente:");
 
 		// COMEÇANDO O JOGO
 
@@ -29,8 +31,7 @@ public class Jokempo {
 			while (contadorDeQuantasPartidas == 0) {
 				
 				
-				System.out.println("- OLÁ JOVEM, EU SOU O GRANDE NARRADOR DA ARENA!");
-				System.out.println("Essa grande figura te olha de cima a baixo, com um olhar decepicionado, e então ele grita novamente:");
+
 				System.out.println("- QUANTAS LUTAS ALGUÉM TÃO FRAQUINHO QUANTO VOCÊ ACHA QUE TEM CORAGEM DE ENFRENTAR NA ARENA!?");
 				partidas = leitor.nextInt();
 				System.out.println("");
@@ -47,7 +48,8 @@ public class Jokempo {
 				System.out.println("- INFELIZMENTE VOCÊ DEU AZAR DESAFIANTE, IRÁ TER QUE LUTAR CONTRA O GRANDE JORGINHO, O CAMPEÃO DA ARENA");
 				VitoriasNecessarias = partidas / 2 + 1;
 				System.out.println("- PARA VENCER A GUERRA VOCÊ PRECISA GANHAR " + VitoriasNecessarias
-						+ " LUTAS! EU SEI QUE VC N É CAPAZ, MAS BOA SORTE MOSTRE PRA ELE QUEM É QUE MANDA!!");
+						+ " LUTAS! ");
+				System.out.println("-EU SEI QUE VC N É CAPAZ, MAS BOA SORTE MOSTRE PRA ELE QUEM É QUE MANDA!!");
 				partidas2 = partidas;
 
 			}
@@ -58,7 +60,7 @@ public class Jokempo {
 			while (contadorJogo == 0) {
 
 				contadorDePartidasPlacar = contadorDePartidasPlacar + 1;
-				System.out.println("________________________________");
+				System.out.println("_______________________________________________________________________________________________________");
 				System.out.println("- SENHORAS E SENHORES!! NOS ESTAMOS NA LUTA DE NÚMERO " + contadorDePartidasPlacar +" ENTRE O MERO DESAFIANTE, CONTRA O INCRÍVEL JORGINHO, O GRANDE CAMPEÃO!!");
 				System.out.println("");
 				System.out.println("1 - A GRANDE PEDRA");
@@ -180,7 +182,7 @@ public class Jokempo {
 				}
 				if (placarJogador > partidas2 / 2) {
 					partidasJogadas = partidas;
-					System.out.println("-SENHARAS E SENHORES COMO É IMPOSSIVEL QUE O JORGINHO VENCE ESTÁ GUERRA, O VENCEDOR É O INCRÍVEL DESAFIANTE!!");
+					System.out.println("-SENHARAS E SENHORES COMO É IMPOSSIVEL QUE O JORGINHO VENCE ESTÁ GUERRA, O VENCEDOR É O DESAFI... INCRÍVEL DESAFIANTE!!");
 					System.out.println("PLACAR FINAL");
 					System.out.println("VITÓRIAS DO INCRÍVEL DESAFIANTE = " + placarJogador);
 					System.out.println("VITÓRIAS DO JORGINHO = " + placarComputador);
@@ -352,6 +354,15 @@ public class Jokempo {
 			}
 
 			// DESEJA ENTRAR NA ARENA NOVAMENTE
+			if (placarJogador>placarComputador) {
+			System.out.println("Você ve Jorginho andando em sua direção com um olhar confiante mas, ao mesmo tempo triste!");
+			System.out.println("-DESAFIANTE! Essa foi uma das melhores lutas que eu já tive, vamos lutar novamente!!");
+			} else if (placarComputador>placarJogador) {
+				
+				System.out.println("Você ve Jorginho andando em sua direção com um olhar confiante te olhando de cima!!");
+				System.out.println("-DESAFIANTE! Essa foi uma das melhores lutas que eu já tive, o resultado foi obivo, mas mesmo assim... VAMOS LUTAR NOVAMENTE!!");
+				
+			}
 
 			resetarjogo2 = 0;
 			while (resetarjogo2 == 0) {
