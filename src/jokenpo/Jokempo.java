@@ -108,7 +108,7 @@ public class Jokempo {
 				System.out.println(
 						"_______________________________________________________________________________________________________");
 				System.out.println("- SENHORAS E SENHORES!! NOS ESTAMOS NA LUTA DE NÚMERO " + contadorDePartidasPlacar
-						+ " ENTRE O MERO DESAFIANTE, CONTRA O INCRÍVEL JORGINHO, O GRANDE CAMPEÃO!!");
+						+ " ENTRE O DESAFIANTE, CONTRA O INCRÍVEL JORGINHO, O GRANDE CAMPEÃO!!");
 				System.out.println("");
 				System.out.println("1 - A GRANDE PEDRA");
 				System.out.println("2 - O RÁPIDO PAPEL");
@@ -186,12 +186,22 @@ public class Jokempo {
 					System.out.println("O DESAFIANTE UTILIZOU " + EscolhaEscritaJogador);
 					System.out.println("O INCRíVEL JORGINHO UTILIZOU " + EscolhaEscritaComputador);
 					System.out.println("");
+					if (contadorHistoria2==0) {
 					System.out.println(
 							"_______________________________________________________________________________________________________");
-					System.out.println("ÍMPOSSIVEL, JORGINHO PERDEU ESTÁ LUTA");
+					System.out.println("ÍMPOSSIVEL, JORGINHO PERDEU ESTÁ LUTA!!");
 					System.out.println(
 							"_______________________________________________________________________________________________________");
 					System.out.println("");
+					} else {
+						System.out.println(
+								"_______________________________________________________________________________________________________");
+						System.out.println("OLHA SÓ, PARECE QUE NOSSO QUERIDO DESAFIANTE CONSEGIU LEVAR ESSA!!");
+						System.out.println(
+								"_______________________________________________________________________________________________________");
+						System.out.println("");
+						
+					}
 					placarJogador++;
 					partidasJogadas++;
 					System.out.println("VITÓRIAS DO DESAFIANTE = " + placarJogador);
@@ -244,7 +254,7 @@ public class Jokempo {
 				if (placarJogador > partidas2 / 2) {
 					partidasJogadas = partidas;
 					System.out.println(
-							"-SENHARAS E SENHORES COMO É IMPOSSIVEL QUE O JORGINHO VENCE ESTÁ GUERRA, O VENCEDOR É O DESAFI... INCRÍVEL DESAFIANTE!!");
+							"-SENHARAS E SENHORES COMO É IMPOSSIVEL QUE O JORGINHO VENÇA ESTÁ GUERRA, O VENCEDOR É O DESAFI... INCRÍVEL DESAFIANTE!!");
 					System.out.println("PLACAR FINAL");
 					System.out.println("VITÓRIAS DO INCRÍVEL DESAFIANTE = " + placarJogador);
 					System.out.println("VITÓRIAS DO JORGINHO = " + placarComputador);
@@ -331,11 +341,22 @@ public class Jokempo {
 							System.out.println("O jogador escolheu" + EscolhaEscritaJogador);
 							System.out.println("O computador escolheu" + EscolhaEscritaComputador);
 							System.out.println("");
-							System.out.println(
-									"_______________________________________________________________________________________________________");
-							System.out.println("NÃO ACREDITO! O DESAFI... O INCRÍVEL DEAFIANTE É O GRANDE VENCEDOR");
-							System.out.println(
-									"_______________________________________________________________________________________________________");
+							if (contadorHistoria2==0) {
+								System.out.println(
+										"_______________________________________________________________________________________________________");
+								System.out.println("ÍMPOSSIVEL, JORGINHO PERDEU ESTÁ LUTA!!");
+								System.out.println(
+										"_______________________________________________________________________________________________________");
+								System.out.println("");
+								} else {
+									System.out.println(
+											"_______________________________________________________________________________________________________");
+									System.out.println("OLHA SÓ, PARECE QUE NOSSO QUERIDO DESAFIANTE CONSEGIU LEVAR ESSA!!");
+									System.out.println(
+											"_______________________________________________________________________________________________________");
+									System.out.println("");
+									
+								}
 							placarJogador++;
 							partidasJogadas++;
 							contador3++;
